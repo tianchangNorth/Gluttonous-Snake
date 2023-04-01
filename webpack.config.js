@@ -1,6 +1,5 @@
 //引入一个包
 const path = require('path')
-const HTMLWebpackPlugin = require('html-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 //webpack 中所有的配置信息都应带写在module.exports中
 module.exports = {
@@ -55,5 +54,8 @@ module.exports = {
             template:'./src/index.html'
         }),
     ],
+    resolve: {
+        extensions: ['.ts', '.js']
+    },
     mode:"production",
 }
