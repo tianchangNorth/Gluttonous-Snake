@@ -1,0 +1,11 @@
+{
+    //编译器选项
+    "compilerOptions": {
+        //用来指定ts被编译为的es版本
+        "target": "ES6",
+        //指定我们要使用的模块化的规范
+        "module": "ES6",
+        "strict": true,
+        "noEmitOnError": true
+    }
+}
