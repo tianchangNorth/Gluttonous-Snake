@@ -52,6 +52,10 @@ class Snake{
         if (this.Y === value) {
             return
         }
+        if(value < 0 || value > 290){
+            //进入判断说明🐍撞墙了,抛出一个异常
+            throw new Error("🐍撞墙了");
+        }
         if (this.boides[1] && (this.boides[1] as HTMLElement).offsetTop === value) {
             // console.log('调头了');
             //如果调头了 让🐍继续向反方向移动
