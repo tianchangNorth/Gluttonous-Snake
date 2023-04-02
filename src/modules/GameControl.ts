@@ -9,6 +9,9 @@ class GameControl{
     food:Food
     scorePanel:ScorePanel
 
+    //创建一个属性来存储蛇的移动方向（也就是按键的方向）
+    direction:string = ''
+
     constructor(){
         this.snake = new Snake();
         this.food = new Food();
@@ -18,13 +21,16 @@ class GameControl{
 
     //调用后游戏开始
     init(){ 
-        //绑定键盘按下事件
-        document.addEventListener("keydown",this.keydownHandler)
+        //绑定键盘按下事件 
+        document.addEventListener("keydown",this.keydownHandler.bind(this))
     }
 
     //创建一个键盘按下的响应函数
     keydownHandler(event:KeyboardEvent){
-        console.log(event.key); 
+        //需要检查event.key的值是否合法{用户是否按了正确的按键}
+        
+        //修改direction
+        this.direction = event.key
     }
 }
 export default GameControl
